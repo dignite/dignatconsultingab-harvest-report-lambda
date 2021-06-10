@@ -2,7 +2,7 @@ import { startOfMonth } from "./date";
 import MockDate from "mockdate";
 
 describe("date", () => {
-  describe(startOfMonth, () => {
+  describe("startOfMonth function", () => {
     it("should find October 1st", () => {
       expect.assertions(1);
       MockDate.set(new Date("2018-10-17"));
