@@ -13,6 +13,7 @@ jest.mock("./date", () => ({
 
 describe(getRelevantUnbilled, () => {
   test("should return all unbilled billable hours", async () => {
+    expect.assertions(1);
     setupReturnTimeEntries([
       unbilledBillableDecember,
       billedBillableFebruary,
@@ -43,6 +44,7 @@ describe(getRelevantUnbilled, () => {
   });
 
   test("should return non-billable hours from the current month", async () => {
+    expect.assertions(1);
     setupReturnTimeEntries([
       unbilledUnbillableDecember,
       unbilledUnbillableJanuary,
@@ -64,6 +66,7 @@ describe(getRelevantUnbilled, () => {
   });
 
   test("should not return anything but unbilled billable hours and non-billable hours from the current month", async () => {
+    expect.assertions(1);
     setupReturnTimeEntries([
       unbilledBillableDecember,
       unbilledUnbillableDecember,
