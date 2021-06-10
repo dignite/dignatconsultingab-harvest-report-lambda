@@ -16,7 +16,7 @@ describe(root, () => {
   test("should return status code not found", async () => {
     const result = await root();
 
-    expect(result).toEqual({
+    expect(result).toStrictEqual({
       statusCode: 404,
       body: "Not Found",
     });
@@ -85,7 +85,7 @@ describe(hours, () => {
 
     const result = await hours();
 
-    expect(result).toEqual({
+    expect(result).toStrictEqual({
       body: mockSerializedBody,
       statusCode: 200,
     });
