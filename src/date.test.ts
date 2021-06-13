@@ -2,18 +2,30 @@ import { startOfMonth } from "./date";
 import MockDate from "mockdate";
 
 describe("date", () => {
-  describe(startOfMonth, () => {
-    test("should find October 1st", () => {
-      MockDate.set(new Date("2018-10-17"));
+  describe("startOfMonth function", () => {
+    it("should find October 1st", () => {
+      expect.assertions(1);
+      try {
+        MockDate.set(new Date("2018-10-17"));
 
-      expect(startOfMonth()).toEqual(new Date("2018-10-01T00:00:00.000Z"));
+        expect(startOfMonth()).toStrictEqual(
+          new Date("2018-10-01T00:00:00.000Z")
+        );
+      } finally {
+        MockDate.reset();
+      }
     });
-    test("should find November 1st", () => {
-      MockDate.set(new Date("2018-11-01"));
+    it("should find November 1st", () => {
+      expect.assertions(1);
+      try {
+        MockDate.set(new Date("2018-11-01"));
 
-      expect(startOfMonth()).toEqual(new Date("2018-11-01T00:00:00.000Z"));
+        expect(startOfMonth()).toStrictEqual(
+          new Date("2018-11-01T00:00:00.000Z")
+        );
+      } finally {
+        MockDate.reset();
+      }
     });
   });
-
-  afterEach(MockDate.reset);
 });
